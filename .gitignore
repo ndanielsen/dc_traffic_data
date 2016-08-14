@@ -1,0 +1,6 @@
+venv
+*.pyc
+
+*.zip
+.ipynb_checkpoints
+.DS_Stores
