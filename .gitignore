@@ -3,7 +3,7 @@ venv
 
 *.zip
 .ipynb_checkpoints
-.DS_Stores
+.DS_Store
 
 
 # Byte-compiled / optimized / DLL files
@@ -101,3 +101,5 @@ ENV/
 vz-hackathon
 data
 cleaned_data
+__MACOSX/
+*.pkle
