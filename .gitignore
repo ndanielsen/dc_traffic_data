@@ -101,3 +101,4 @@ ENV/
 vz-hackathon
 __MACOSX/
 *.pkle
+data/
