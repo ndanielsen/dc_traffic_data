@@ -99,7 +99,5 @@ ENV/
 
 # data folders
 vz-hackathon
-data
-cleaned_data
 __MACOSX/
 *.pkle
