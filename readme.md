@@ -18,7 +18,11 @@ Create a virtual environment with virtualenv.
 **Available arguments:**
 
 `raw` - Downloads raw data set folder 'vz-hackathon-2'
+
 `small_geojson` - geojson files and assorted dc geospatial data
+
 `parking_1million` - sample of 1 million parking violations in cleaned tsv format
+
 `parking_100k` - sample of 100k parking violations in cleaned tsv format
+
 `cleaned_parking_data` - full data set of 11,748,803 parking violations
