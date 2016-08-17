@@ -10,6 +10,16 @@ Create a virtual environment with virtualenv.
 
 `pip install -r requirements.txt`
 
+### Geo-spatial Analysis
+
+* Warning * this might be a pain in the ass
+
+Install:
+`pip install -r geo-requirements.txt`
+
+Also check out: http://geopandas.readthedocs.io/en/latest/install.html
+
+
 
 ### Downloadable data
 
