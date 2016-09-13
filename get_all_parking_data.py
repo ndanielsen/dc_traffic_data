@@ -13,12 +13,11 @@ import requests
 
 # In[2]:
 
-pd.set_option('display.max_columns', 500)
 
 
 # In[3]:
 
-with open('dc_parking_violations.json', 'r') as f:
+with open('notebooks/dc_parking_violations.json', 'r') as f:
     parking_violations = json.load(f)
 
 
