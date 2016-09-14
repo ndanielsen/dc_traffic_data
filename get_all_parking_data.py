@@ -32,7 +32,8 @@ for fullname, csv in parking_violations.items():
         r = requests.get(download_file)
         if not '"status":"Processing","generating":{}' in r.content:
             REQUESTED_TRUE = False
-
+        else:
+            print('bad file')
     with open('./parkingdata/' + local_filename, 'wb') as f:
             f.write(r.content)
     print(local_filename)
