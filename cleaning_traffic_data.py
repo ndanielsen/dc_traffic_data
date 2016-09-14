@@ -7,7 +7,7 @@ import glob
 
 files = glob.glob('./parkingdata/**')
 
-parking_violations = [f for f in files if 'Parking_Violations_in' in f]
+parking_violations = [f for f in files if 'parking_violations' in f]
 
 ### Combine all csvs into one data frame
 
