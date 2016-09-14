@@ -30,7 +30,7 @@ for fullname, csv in parking_violations.items():
     while REQUESTED_TRUE:
         time.sleep(5)
         r = requests.get(download_file)
-        if not '"status":"Processing","generating":{}' in r.content:
+        if not b'"status":"Processing","generating":{}' in r.content:
             REQUESTED_TRUE = False
         else:
             print('bad file')
