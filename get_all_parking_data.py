@@ -10,6 +10,7 @@ import json
 import pandas as pd
 import requests
 import time
+import os
 
 # In[2]:
 
@@ -26,18 +27,15 @@ with open('notebooks/dc_parking_violations.json', 'r') as f:
 for fullname, csv in parking_violations.items():
     download_file =  csv + '.csv'
     local_filename = '_'.join(name.lower() for name in fullname.split() ) + '.csv'
-    REQUESTED_TRUE = True
-    while REQUESTED_TRUE:
+    local_filename = './parkingdata/' + local_filename
+    if not os.path.isfile(local_filename):
+        #REQUESTED_TRUE = True
+        #while REQUESTED_TRUE:
         time.sleep(5)
         r = requests.get(download_file)
         if not b'"status":"Processing","generating":{}' in r.content:
-            REQUESTED_TRUE = False
+            with open(local_filename, 'wb') as f:
+                f.write(r.content)
+            print(local_filename)
         else:
-            print('bad file')
-    with open('./parkingdata/' + local_filename, 'wb') as f:
-            f.write(r.content)
-    print(local_filename)
-# In[ ]:
-
-
-
+            print('bad request: %s' % filename)
