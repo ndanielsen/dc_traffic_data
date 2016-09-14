@@ -29,7 +29,7 @@ for fullname, csv in parking_violations.items():
     r = requests.get(download_file)
     with open('./parkingdata/' + local_filename, 'wb') as f:
             f.write(r.content)
-
+    print(local_filename)
     time.sleep(5)
 # In[ ]:
 
