@@ -38,4 +38,4 @@ for fullname, csv in parking_violations.items():
                 f.write(r.content)
             print(local_filename)
         else:
-            print('bad request: %s' % filename)
+            print('bad request: %s' % local_filename)
