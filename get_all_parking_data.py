@@ -9,7 +9,7 @@ import glob
 import json
 import pandas as pd
 import requests
-
+import time
 
 # In[2]:
 
@@ -24,13 +24,13 @@ with open('notebooks/dc_parking_violations.json', 'r') as f:
 # In[ ]:
 
 for fullname, csv in parking_violations.items():
-    download_file = csv + '.csv'
+    download_file = './parkingdata/' +  csv + '.csv'
     local_filename = '_'.join(name.lower() for name in fullname.split() ) + '.csv'
     r = requests.get(download_file)
     with open(local_filename, 'wb') as f:
             f.write(r.content)
 
-
+    time.sleep(5)
 # In[ ]:
 
 
