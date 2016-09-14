@@ -4,6 +4,7 @@
 # ## Loading Parking Violation Data and cleaning operations
 import pandas as pd
 import glob
+import pickle
 
 files = glob.glob('./parkingdata/**')
 
@@ -88,7 +89,7 @@ df.drop_duplicates(subset='rowid_', inplace=True)
 df.streetsegid.fillna(0, inplace=True)
 
 
-df.to_pickle('parking_eda.pkle')
+#df.to_pickle('parking_eda.pkle')
 
 
 ### Export to CSV
