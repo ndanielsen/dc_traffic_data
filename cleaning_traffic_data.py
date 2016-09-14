@@ -20,6 +20,8 @@ for file_ in parking_violations[:]:
 
 frame = pd.concat(list_)
 
+print('concat-ed all files')
+
 # TESTs
 assert frame.filename.nunique() == len(parking_violations)
 frame.columns = [col.lower() for col in frame.columns]
@@ -57,7 +59,7 @@ def mil_to_time(x):
         t = t[:2]+ ':' + '5' + t[4:]
 
     return t
-
+print('converting datetime')
 df['issue_time_military'] = df.issue_time.apply(str).apply(mil_to_time)
 dates = df.ticket_issue_date.str[:10] + 'T' #+
 df['ticket_issue_datetime'] = dates + df.issue_time_military
@@ -89,7 +91,7 @@ df.to_pickle('parking_eda.pkle')
 
 
 ### Export to CSV
-
+print('preparing csvs')
 df.to_csv('./cleaned_data/clean_parking_violations.tsv', sep='\t', index=False)
 
 df.sample(10000).to_csv('./sampled_data/clean_parking_violations_10k_sample.tsv', sep='\t', index=False)
