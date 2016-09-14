@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # ## Loading Parking Violation Data and cleaning operations
-
+import pandas as pd
 import glob
 
 files = glob.glob('./parkingdata/**')
