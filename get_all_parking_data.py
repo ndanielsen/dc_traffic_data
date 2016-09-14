@@ -26,11 +26,16 @@ with open('notebooks/dc_parking_violations.json', 'r') as f:
 for fullname, csv in parking_violations.items():
     download_file =  csv + '.csv'
     local_filename = '_'.join(name.lower() for name in fullname.split() ) + '.csv'
-    r = requests.get(download_file)
+    REQUESTED_TRUE = True
+    while REQUESTED_TRUE:
+        time.sleep(5)
+        r = requests.get(download_file)
+        if not '"status":"Processing","generating":{}' in r.content:
+            REQUESTED_TRUE = False
+
     with open('./parkingdata/' + local_filename, 'wb') as f:
             f.write(r.content)
     print(local_filename)
-    time.sleep(5)
 # In[ ]:
 
 
