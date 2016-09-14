@@ -11,6 +11,7 @@ parking_violations = [f for f in files if 'parking_violations' in f]
 
 ### Combine all csvs into one data frame
 
+print('starting merge')
 list_ = []
 for file_ in parking_violations[:]:
     df = pd.read_csv(file_,index_col=None, header=0)
