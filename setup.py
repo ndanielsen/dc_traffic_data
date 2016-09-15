@@ -75,8 +75,8 @@ if parking_100k:
     unzip_to_dir(file_zip, data_folder)
 
 if cleaned_parking_data:
-    url = "https://s3.amazonaws.com/dctraffic/clean_parking_violations.csv.zip"
-    file_zip = "clean_parking_violations.csv.zip"
+    url = "https://s3.amazonaws.com/dctraffic/clean_parking_violations.tsv.zip"
+    file_zip = "clean_parking_violations.tsv.zip"
     data_folder = 'cleaned_data'
     download(url, file_zip)
     unzip_to_dir(file_zip, data_folder)
